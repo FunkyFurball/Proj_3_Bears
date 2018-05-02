@@ -24,39 +24,40 @@
                 <form action="">
                     <fieldset class="idealSnack">
                         <p>Your ideal munchies are...</p>
-                        <label for="sweet">Sweet</label>
                         <input type="radio" id="sweet" value="sweet" name="idealSnack">
-                        <label for="savoury">Savoury</label>
+                        <label for="sweet">Sweet</label>
                         <input type="radio" id="savoury" value="savoury" name="idealSnack">
+                        <label for="savoury">Savoury</label>
                     </fieldset>
                     <fieldset class="importantItem">
                         <p>Stranded alone, what is more important?</p>
-                        <label for="snack">Fav snack</label>
                         <input type="radio" id="snack" value="snack" name="importantItem">
+                        <label for="snack">Fav snack</label>
                         
-                        <label for="knife">Knife</label>
                         <input type="radio" id="knife" value="knife" name="importantItem">
+                        <label for="knife">Knife</label>
                     </fieldset>
                     <fieldset class="activeTime">
                         <p>7am and a glorious sunny day, do you feel...</p>
-                        <label for="night">Cursed to be awake</label>
                         <input type="radio" id="night" value="night" name="activeTime">
+                        <label for="night">Cursed to be awake</label>
         
-                        <label for="day"> Pumped to start the day!</label>
                         <input type="radio" id="day" value="day" name="activeTime">
+                        <label for="day"> Pumped to start the day!</label>
                     </fieldset>
-                    <div class="submit">
-                        <input type="submit" value="I'm __ Bear">
-                    </div>
+                        <div class="submit"><input type="submit" value="I'm __ Bear"></div>
                 </form>
             </div>
+
+        <audio src="assets/lion-purr2.wav" id="sound" class="sound"></audio>
         </section>
 
-        <section class="result">
+        <section class="result_container">
             <div class="wrapper">
-            <h1>You are... </h1>   
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus expedita ab voluptas aut a eveniet pariatur laudantium veritatis voluptatibus suscipit?</p>
+                <div class="result">
+        
             <!-- results go here -->
+                </div>
             </div>
         </section>
     </main>

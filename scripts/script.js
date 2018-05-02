@@ -3,58 +3,70 @@ const bears = [
     name: "Paddington",
     idealSnack: "sweet",
     importantItem: "snack",
-    activeTime: "day"
+    activeTime: "day",
+    image: "assets/fishy_bear.jpg"
   },
 
   {
     name: "Pooh Bear",
     idealSnack: "sweet",
     importantItem: "snack",
-    activeTime: "day"
+    activeTime: "day",
+    image: "assets/fishy_bear.jpg"
   },
 
   {
     name: "Bear Gryllis",
     idealSnack: "savoury",
     importantItem: "knife",
-    activeTime: "day"
+    activeTime: "day",
+    image: "assets/fishy_bear.jpg"
   },
 
   {
     name: "Dwight",
     idealSnack: "savoury",
     importantItem: "knife",
-    activeTime: "night"
+    activeTime: "night",
+    image: "assets/fishy_bear.jpg"
   },
 
   {
     name: "Nice Bear",
-    idealSnack: "sweet",
-    importantItem: "knife",
-    activeTime: "day"
+    idealSnack: "savoury",
+    importantItem: "snack",
+    activeTime: "day",
+    image: "assets/fishy_bear.jpg"
   },
 
   {
-    name: "Cuddly Bear",
+    name: "Teddy Bear",
     idealSnack: "sweet",
-    importantItem: "knife",
-    activeTime: "day"
+    importantItem: "snack",
+    activeTime: "night",
+    image: "assets/fishy_bear.jpg"
   },
 
-   {
+  {
     name: "Hungry Bear",
     idealSnack: "sweet",
     importantItem: "snack",
-    activeTime: "day"
-  } 
+    activeTime: "day",
+    image: "assets/fishy_bear.jpg"
+  }
 ];
 
+const filter = [];
+const secondFilter = [];
+const lastFilter = [];
+const sound = document.getElementById('sound');
 
 
 $(function(){
     $('form').on('submit', function(e) {
         //prevent page from refreshing
         e.preventDefault();
+        sound.play();
 
         //save user selection for each question into a variable
         const userIdealSnack = $("input[name=idealSnack]:checked").val();
@@ -64,45 +76,60 @@ $(function(){
         //create profile of user as an object in order to compare to objects in Bear array
         const userBear = { idealSnack: userIdealSnack, importantItem: userImportantItem, activeTime: userActiveTime };
 
-
-
         //match properties in first question to first property in bears array
         //create new array called filter, push answers into this array.
-        const filter = [];
         for (let i = 0; i < bears.length; i++) {
             let storedChoice = bears[i];
-            if(userBear.idealSnack === bears[i].idealSnack){
+            if(userBear.idealSnack === storedChoice.idealSnack){
                 filter.push(storedChoice);
-                console.log(filter);
             }
         }
-                            // adding filter method
-                            const secondFilter = filter.filter(() =>{
-                                return (userBear.importantItem === bears.importantItem)
-                            });
+        //loop through answers from filter array using second property
+        //create another array called secondFilter and push answers into here
+        for (let i = 0; i < filter.length; i++) {
+          let storedChoice = filter[i];
+            if(userBear.importantItem === storedChoice.importantItem){
+              secondFilter.push(storedChoice);
+            }
+          }
+        //loop through answers through lastFilter
+        //create final array called lastFilter and push final answer here.
+        for (let i = 0; i < secondFilter.length; i++) {
+          let storedChoice = secondFilter[i];
+          if (userBear.activeTime === storedChoice.activeTime) {
+            lastFilter.push(storedChoice);
+          }
+        }
+        console.log(lastFilter);
+          
+        //get random match
+        //make a function to generate a random number from the lastFilter array.
 
-        // //loop through answers from filter array using second property
-        // //create another array called secondFilter and push answers into here
-        // const secondFilter = [];
-        // for (let i = 0; i < secondFilter[i].length; i++) {
-        //     let storedChoice = filter[i];
-        //     if(userBear.importantItem === secondFilter[i].importantItem){
-        //         secondFilter.push(storedChoice);
-        //         console.log(secondFilter);
-        //     }
-        // }
+        const getRandomItemFromArray = function (array) {
+          const randomItem = Math.floor(Math.random() * array.length);
+          return array[randomItem];
+        }
+          
+        const finalResult = getRandomItemFromArray (lastFilter);
+        $(".result").html(`<h1>You are...${finalResult.name}</h1><img src="${finalResult.image}">`);
 
-        // //loop through answers through lastFilter
-        // //create final array called lastFilter and push final answer here.
-        // const lastFilter = [];
-        // for (let i = 0; i < lastFilter[i].length; i++) {
-        //   let storedChoice = lastFilter[i];
-        //   if (userBear.activeTime === lastFilter[i].activeTime) {
-        //     lastFilter.push(storedChoice);
-        //     console.log(lastFilter);
-        //   }
-        // }
-    });
+        });
+      }); //end of document ready
+      
 
-}); //end of document ready
 
+
+
+
+
+
+
+
+
+
+
+      
+      // adding filter method
+      // const secondFilter = filter.filter( (bear) => {
+      //     return (userBear.importantItem === bear.importantItem)
+      // });

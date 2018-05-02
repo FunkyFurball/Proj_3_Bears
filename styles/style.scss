@@ -11,11 +11,50 @@ html{
 body{
     font-size:1.6rem;
     background: #eee;
+   
+}
+.header, .questions {
+    margin: 5% auto;
+}
+
+img{
+    max-width: 100%;
+}
+.submit {
+    display: flex;
+    justify-content: center;
+}
+form{
+    width:70%;
+    margin:0 auto;
+    fieldset{
+        text-align: center;
+    }
+    input[type=radio]{
+        opacity:0.1;
+    }
+
+    input:checked + label{
+        background: darkgreen;
+        box-shadow: none;
+    }
+
+    label, input[type=submit] {
+        background: burlywood;
+        padding: 5px;
+        border:1px solid brown;
+        box-shadow: 1px 1px 5px #000;
+    }
+
+    label:hover{
+        box-shadow: 0px 0px 0px #000;
+    }    
 }
 
 h1 {
     margin:0;
     padding:0;
+    text-align:center;
 }
 .wrapper {
     margin: 0 auto;
