@@ -25,7 +25,7 @@ const bears = [
 
   {
     name: "Dwight",
-    idealSnack: "savoury",
+    idealSnack: "sweet",
     importantItem: "knife",
     activeTime: "night",
     image: "assets/fishy_bear.jpg"
@@ -50,7 +50,7 @@ const bears = [
   {
     name: "Hungry Bear",
     idealSnack: "sweet",
-    importantItem: "snack",
+    importantItem: "knife ",
     activeTime: "day",
     image: "assets/fishy_bear.jpg"
   }
@@ -61,12 +61,25 @@ const secondFilter = [];
 const lastFilter = [];
 const sound = document.getElementById('sound');
 
-
 $(function(){
+  //TO BEGIN THE QUIZ
+  //Click bear logo, smooth scroll to question section
+  
+  // $('a').smoothScroll(1000); 
+  $('.logo').on('click',function(){
+    $('.header').hide();
+  });
+  // FOR THE FORM, QUESTIONS AND SUBMIT EVENT
     $('form').on('submit', function(e) {
         //prevent page from refreshing
         e.preventDefault();
+
+        //play sound when submit button is clicked
         sound.play();
+        
+        //hide questions when submit button is clicked
+        $('.questions').hide();
+
 
         //save user selection for each question into a variable
         const userIdealSnack = $("input[name=idealSnack]:checked").val();
@@ -111,10 +124,17 @@ $(function(){
         }
           
         const finalResult = getRandomItemFromArray (lastFilter);
-        $(".result").html(`<h1>You are...${finalResult.name}</h1><img src="${finalResult.image}">`);
+        $(".result").html(`<h1>You are... ${finalResult.name}</h1><img src="${finalResult.image}" id="result">`);
+      
+        //smooth scroll will not work for form submission because when submit button is clicked, smooth scroll starts but problem is content is only generated after the click.
+        //so, we use the following code to target body in html, animate it over 1000ms, and tell it to go to #result. Offset tells it to move from top of page.
+        //  $('html, body').animate({
+        //   scrollTop: $('#result').offset().top
+        // }, 1000) 
+      });
 
-        });
-      }); //end of document ready
+        
+}); //end of document ready
       
 
 

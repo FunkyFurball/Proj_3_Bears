@@ -1,68 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Who Would You Be-ar?</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/animate.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
-    
-</head>
-<body>
-    <header class="header">
-        <div class="wrapper">
-            <h1>Who would you be(ar)?</h1>
-        </div>
-    </header>
-    
-    <main>
-        <section class="questions">
-            <div class="wrapper">
-                <form action="">
-                    <fieldset class="idealSnack">
-                        <p>Your ideal munchies are...</p>
-                        <input type="radio" id="sweet" value="sweet" name="idealSnack">
-                        <label for="sweet">Sweet</label>
-                        <input type="radio" id="savoury" value="savoury" name="idealSnack">
-                        <label for="savoury">Savoury</label>
-                    </fieldset>
-                    <fieldset class="importantItem">
-                        <p>Stranded alone, what is more important?</p>
-                        <input type="radio" id="snack" value="snack" name="importantItem">
-                        <label for="snack">Fav snack</label>
-                        
-                        <input type="radio" id="knife" value="knife" name="importantItem">
-                        <label for="knife">Knife</label>
-                    </fieldset>
-                    <fieldset class="activeTime">
-                        <p>7am and a glorious sunny day, do you feel...</p>
-                        <input type="radio" id="night" value="night" name="activeTime">
-                        <label for="night">Cursed to be awake</label>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Who Would You Be-ar?</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/animate.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Skranji" rel="stylesheet">
         
-                        <input type="radio" id="day" value="day" name="activeTime">
-                        <label for="day"> Pumped to start the day!</label>
-                    </fieldset>
-                        <div class="submit"><input type="submit" value="I'm __ Bear"></div>
-                </form>
+    </head>
+    <body>
+        <header>
+            <div class="wrapper header">
+                <h1>Who would you be?</h1>
+                <!-- <h1>Who would you</h1><h1 class="bearText"><span class="backdrop">be(ar)</span>?</h1> -->
+                <a href="#questions">
+                    <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                        <defs>
+                            <linearGradient id="myGradient">
+                                <stop offset="5%" stop-color="gold"/>
+                                <stop offset="95%" stop-color="brown"/>
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <path d="M93.5,61c0,0-1.6,6.4-2.1,7.6c-0.4,1.2-2.9,5.4-2.9,5.4s1.4,3.3,1.6,3.9c0.2,0.6-2.9,1.9-3.3,2.9s0.6,1.9,4.5,1.6   c3.9-0.2,5.6,0.2,6.6-3.9C99.1,74.4,100.8,69.6,93.5,61z"
+                            />
+                            <path d="M36,56.9l-2.5-7.6c-0.4-1.1-1.4-1.9-2.6-1.9h-5.4c0,0,1.2,4.9,2.5,9.3c1.2,4.3,2.9,6.6,2.9,6.6L36,56.9z" />
+                            <path d="M38.9,77.7c-0.8,1.4-0.8,2.5-2.9,3.9c-2.1,1.4,1.6,0.7,7,0.9c0,0,2.5-0.8,2.5-2.9c0-2.1-1.9-7.1-1.9-7.1   S39.7,76.2,38.9,77.7z"
+                            />
+                            <path d="M15.3,21.8c0,0-1.5-2.5-3.5-2c-2,0.5-0.7,4.8-0.7,4.8S12.3,22.4,15.3,21.8z" />
+                            <path d="M92.6,41.8c-3.4-9.3-9.5-23.7-38.2-21.6c0,0-4.7-0.6-7.6-3.1s-8.2-2.7-14.6,2.3c0,0-2.7,1.8-11.9,2.9c0,0-5.4,0.2-7.3,2.4   s-5.2,4.7-6.4,7.2c-0.3,0.7,0,2.6,0,2.6l-5.1,4c-0.5,0.4-0.6,1.2-0.3,1.7c0.9,1.3,2.5,4.9,3.9,5.2c1.3,0.3,5.1,0.7,9.1,0.2   c3-0.3,12.2-0.3,17.9-0.2c1.7,0,3.2,1.1,3.7,2.8l2.5,9c0,0-3.3,5.6-7,9.3c-3.7,3.7-3.5,8.7-2.3,11.1c1.2,2.5,5.8,5.2,8.2,0   c2.5-5.2,9.5-7.8,11.6-11.5c2-3.7,6.2-8.9,5.3-15.4l0.1-2.8c0,0,2.2,4.2,1.1,8.2c-1,4-1,4-1,4s12.4,3.7,15,2.5   c0,0,0.4-6.6,6.8-12.8c0,0-6.2,10.3-5.4,15.7c0.8,5.4,0.2,8-0.6,11.1c-0.8,3.1-2.2,4-2.2,4s-4,0.6-3.8,2.8c0.2,2.3,14.5,1,14.5,1   s2.2-0.4,2.2-1.9s6.4-6,9.9-18C94.4,52.3,95.9,51.1,92.6,41.8z M11.8,34.4c-0.7,0-1.3-0.6-1.3-1.3s0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3   S12.5,34.4,11.8,34.4z M23.2,31.1c0,0-0.8-3.3-3.6-4c0,0,0.8-3.1,2.5-2.5S23.5,29.4,23.2,31.1z"
+                            />
+                        </g>
+                        <!-- <text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by parkjisun</text>
+                        <text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text> -->
+                    </svg>
+                </a>
             </div>
-
-        <audio src="assets/lion-purr2.wav" id="sound" class="sound"></audio>
-        </section>
-
-        <section class="result_container">
-            <div class="wrapper">
-                <div class="result">
+        </header>
         
-            <!-- results go here -->
+        <main>
+            <section class="questions" id="questions">
+                <div class="wrapper">
+                    <h1>Who would you be?</h1>
+                    <form action="">
+                        <fieldset class="idealSnack">
+                            <p>Your ideal munchies are...</p>
+                            <input type="radio" id="sweet" value="sweet" name="idealSnack">
+                            <label for="sweet">Sweet</label>
+                            <input type="radio" id="savoury" value="savoury" name="idealSnack">
+                            <label for="savoury">Savoury</label>
+                        </fieldset>
+                        <fieldset class="importantItem">
+                            <p>Stranded alone, what is more important?</p>
+                            <input type="radio" id="snack" value="snack" name="importantItem">
+                            <label for="snack">Fav snack</label>
+                            
+                            <input type="radio" id="knife" value="knife" name="importantItem">
+                            <label for="knife">Knife</label>
+                        </fieldset>
+                        <fieldset class="activeTime">
+                            <p>7am and a glorious sunny day, do you feel...</p>
+                            <input type="radio" id="night" value="night" name="activeTime">
+                            <label for="night">Cursed to be awake</label>
+            
+                            <input type="radio" id="day" value="day" name="activeTime">
+                            <label for="day"> Fired up!</label>
+                        </fieldset>
+                        <div class="submit">
+                            <a href="#result"><input type="submit" value="I'm __ Bear"></a>
+                        </div>
+                    </form>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="scripts/script.js"></script>
-</body>
-</html>
+            <audio src="assets/lion-purr2.wav" id="sound" class="sound"></audio>
+            </section>
+
+            <section class="result_container">
+                <div class="wrapper">
+                    <div class="result">
+                    <!-- results go here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
+        <script src="scripts/script.js"></script>
+    </body>
+    </html>
