@@ -142,7 +142,7 @@ body {
   @media (max-width: 640px) {
     body {
       font-size: 2.5vw; } }
-  @media (max-height: 414px) {
+  @media (max-height: 414px) and (orientation: landscape) {
     body {
       font-size: 2.5vw; } }
 
@@ -157,19 +157,26 @@ p {
   @media (max-width: 640px) {
     p {
       font-size: 4vw; } }
-  @media (max-height: 414px) {
+  @media (max-height: 414px) and (orientation: landscape) {
     p {
       font-size: 4vw; } }
 
 a {
-  color: inherit;
+  color: goldenrod;
+  text-shadow: 1px 1px 0px #2B2118;
   text-decoration: none; }
-  a:hover {
-    text-decoration: underline;
-    color: goldenrod; }
+  a:hover, a:focus {
+    color: #2B2118;
+    text-decoration: underline; }
+
+ul {
+  list-style-type: none; }
 
 .accent {
   color: gold; }
+
+h3 .accent {
+  text-shadow: 1px 1px 0 #2B2118; }
 
 .wrapper {
   margin: 0 auto;
@@ -185,71 +192,97 @@ a {
   fill: #2B2118;
   position: absolute;
   top: 50%;
-  left: 50%; }
-  @media (max-width: 1280px) {
+  left: 35%; }
+  @media (max-width: 1920px) and (orientation: landscape) {
     .logo {
-      left: 50%; } }
-  @media (max-width: 1024px) {
+      top: 54%; } }
+  @media (max-width: 960px) and (orientation: landscape) {
     .logo {
+      width: 35%;
       top: 60%; } }
-  @media (max-width: 960px) {
+  @media (max-height: 414px) and (orientation: landscape) {
     .logo {
-      top: 70%; } }
-  @media (max-width: 800px) {
+      width: 35%;
+      left: 80%;
+      top: 28%; } }
+  @media (max-height: 320px) and (orientation: landscape) {
+    .logo {
+      top: 28%; } }
+  @media (max-width: 1000px) and (max-height: 1024px) and (orientation: portrait) {
+    .logo {
+      width: 50%;
+      top: 65%; } }
+  @media (max-height: 1280px) and (orientation: portrait) {
     .logo {
       width: 70%;
-      left: 50%;
-      top: 30%; } }
-  @media (max-width: 420px) {
-    .logo {
-      width: 70%;
-      top: 40%; } }
-  @media (max-height: 414px) {
-    .logo {
-      width: 30%;
-      left: 95%;
-      top: 32%; } }
+      left: 25%;
+      top: 55%; } }
 
 .logo:hover, .logo:focus {
   fill: url(#myGradient);
   stroke: #2B2118; }
 
 h1, h2 {
-  margin: 3% auto;
+  margin: 2% auto;
   padding: 0;
   text-align: center;
   color: #2B2118;
   text-shadow: 2px 2px 1px #2B2118;
   font-size: 7vw; }
-  @media (max-height: 414px) {
+  @media (max-height: 414px) and (orientation: landscape) {
     h1, h2 {
       text-align: left; } }
 
-h1.responsive {
-  /* landscape iphone6 */ }
-  @media (max-width: 1024px) {
-    h1.responsive {
-      font-size: 9vw; } }
-  @media (max-width: 768px) {
-    h1.responsive {
-      font-size: 8vw; } }
-  @media (max-width: 420px) {
-    h1.responsive {
-      font-size: 12vw; } }
+h3 {
+  text-align: center; }
+  @media (max-height: 414px) and (orientation: landscape) {
+    h3 {
+      text-align: left;
+      font-size: 2vw;
+      font-weight: 100;
+      margin-top: 13%; } }
+  @media (max-height: 1024px) and (orientation: portrait) {
+    h3 {
+      font-size: 3.5vw; } }
+  @media (max-width: 1000px) and (max-height: 1024px) and (orientation: portrait) {
+    h3 {
+      font-size: 3vw; } }
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  h1.responsive {
+    font-size: 7vw; } }
+
+@media (max-height: 1024px) and (orientation: portrait) {
+  h1.responsive {
+    font-size: 12vw;
+    margin: 10% auto; } }
+
+@media (max-width: 1000px) and (max-height: 1024px) and (orientation: portrait) {
+  h1.responsive {
+    font-size: 10vw;
+    margin: 5% auto; } }
 
 h2 {
-  font-size: 2.5vw;
-  /* landscape potrait*/ }
-  @media (max-width: 1024px) {
+  font-size: 2.5vw; }
+  @media (max-height: 1024px) and (orientation: portrait) {
+    h2 {
+      font-size: 6vw; } }
+  @media (max-width: 1024px) and (orientation: landscape) {
     h2 {
       font-size: 3.5vw; } }
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (orientation: landscape) {
+    h2 {
+      font-size: 4vw; } }
+  @media (max-width: 1000px) and (max-height: 1000px) and (orientation: portrait) {
     h2 {
       font-size: 5vw; } }
-  @media (max-width: 420px) {
+  @media (max-height: 414px) and (orientation: landscape) {
     h2 {
-      font-size: 7vw;
-      margin: 10% auto; } }
+      margin: 0 auto;
+      font-size: 3.5vw; } }
+  @media (max-width: 768px) and (max-height: 1024px) and (orientation: portrait) {
+    h2 {
+      font-size: 5vw; } }
 
 .submit {
   display: -webkit-box;
@@ -261,20 +294,19 @@ h2 {
   padding: 5%; }
 
 .questions {
-  padding-top: 8%;
-  /* to push try again button off the screen */ }
+  padding-top: 8%; }
   @media (max-width: 1024px) {
     .questions {
       padding-top: 3%; } }
   @media (max-width: 768px) {
     .questions {
       padding-top: 5%; } }
-  @media (max-width: 420px) {
+  @media (max-height: 1024px) and (orientation: portrait) {
     .questions {
       margin-bottom: 40%; } }
-
-.result_container {
-  height: 100vw; }
+  @media (max-height: 736px) and (orientation: portrait) {
+    .questions {
+      margin-bottom: 50%; } }
 
 form {
   margin: 10% auto;
@@ -292,6 +324,12 @@ form {
     form {
       margin-top: 15%;
       margin-bottom: 20%; } }
+  @media (max-height: 960px) and (orientation: portrait) {
+    form {
+      margin-top: 5%; } }
+  @media (max-height: 414px) and (orientation: landscape) {
+    form {
+      margin-top: 5%; } }
   form fieldset {
     text-align: center;
     border: none;
@@ -317,6 +355,7 @@ form {
   form input[type=submit] {
     width: 150%;
     height: 150%; }
+  form input:focus + label,
   form label:hover,
   form input[type=submit] {
     background: -webkit-gradient(linear, left top, left bottom, from(gold), to(brown));

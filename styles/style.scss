@@ -21,7 +21,7 @@ body{
     @media (max-width: 640px) {
         font-size: 2.5vw;
     }
-    @media (max-height: 414px) {
+    @media (max-height: 414px) and (orientation: landscape) {
         font-size: 2.5vw;
     }
 }
@@ -37,25 +37,34 @@ p {
     @media (max-width: 640px) {
         font-size: 4vw;
     }
-    @media (max-height: 414px) {
+    @media (max-height: 414px) and (orientation: landscape) {
         font-size: 4vw;
     }
 
 }
 
 a {
-    color: inherit;
+    color: goldenrod;
+    text-shadow: 1px 1px 0px $bgBrown;
     text-decoration: none;
-    &:hover {
+    &:hover,
+    &:focus {
+        color: $bgBrown;
         text-decoration: underline;
-        color: goldenrod;
     }   
+}
+
+ul {
+    list-style-type: none;
 }
 
 .accent {
     color: $accent;
 }
 
+h3 .accent {
+    text-shadow: 1px 1px 0 $bgBrown;
+}
 .wrapper {
     margin: 0 auto;
     max-width: 70%;
@@ -72,87 +81,119 @@ a {
     fill: $bgBrown;
     position: absolute;
     top: 50%;
-    left: 50%;
-    // transform:translateX(-50%);
-    // transition: all 0.8s ease-in-out;
+    left: 35%;
 
-    @media (max-width: 1280px){
-        left: 50%;
+    @media (max-width: 1920px) and (orientation:landscape){
+        top: 54%;
     }
 
-    @media (max-width: 1024px){
+
+    @media (max-width: 960px) and (orientation: landscape){
+        width: 35%;
         top: 60%;
     }
     
-    @media (max-width: 960px) {
-        top: 70%; 
+    @media (max-height: 414px) and (orientation: landscape) {
+        width: 35%;
+        left: 80%;
+        top: 28%;
     }
 
-    @media (max-width: 800px) {
+    @media (max-height: 320px) and (orientation: landscape) {
+        top: 28%;
+    }
+
+     @media (max-width: 1000px) and (max-height: 1024px) and (orientation: portrait){
+        width: 50%;
+        top: 65%;
+    }
+    
+    @media (max-height: 1280px) and (orientation: portrait) {
         width: 70%;  
-        left: 50%; 
-        top: 30%; 
-    }
+        left: 25%; 
+        top: 55%; 
+    }  
 
-    @media (max-width: 420px){
-        width: 70%;
-        top: 40%;
-    }
-
-    @media (max-height: 414px) {
-        width: 30%;
-        left: 95%;
-        top: 32%;
-    }
 }
 
 .logo:hover, .logo:focus {
     fill: url(#myGradient); 
     stroke:$bgBrown;
-    // transform:translateX(-50%) scale(1.1);
 }
 
 h1, h2 {
-    margin:3% auto;
+    margin:2% auto;
     padding:0;
     text-align:center;
     color: $bgBrown;
     text-shadow: 2px 2px 1px $bgBrown;
     font-size: 7vw; 
-    @media (max-height: 414px) {
+    @media (max-height: 414px) and (orientation: landscape) {
     text-align: left;
     }
 }
 
+h3 {
+    text-align: center;
+    
+    @media (max-height: 414px) and (orientation: landscape) {
+       text-align: left;
+       font-size: 2vw;
+       font-weight: 100;
+       margin-top: 13%;
+    }
+
+    @media (max-height: 1024px) and (orientation: portrait){
+        font-size: 3.5vw;
+    }
+
+    @media (max-width: 1000px) and (max-height: 1024px) and (orientation: portrait){
+        font-size: 3vw;
+    }  
+
+}
 
 h1.responsive {
-    @media (max-width: 1024px) {
-        font-size: 9vw;        
+    @media (max-width: 1024px) and (orientation:landscape) {
+        font-size: 7vw;        
     }
 
-    @media (max-width: 768px) {
-        font-size: 8vw;
-    } /* landscape iphone6 */
-
-    @media (max-width: 420px) {
-        font-size: 12vw;   
+    @media (max-height: 1024px) and (orientation: portrait){
+        font-size: 12vw;
+        margin: 10% auto;
     }
+    @media (max-width: 1000px) and (max-height: 1024px) and (orientation: portrait){
+        font-size: 10vw;
+        margin: 5% auto;
+    }  
 }
 
 h2 {
     font-size:2.5vw;
-    @media (max-width: 1024px) {
+    @media (max-height: 1024px) and (orientation: portrait){
+        font-size: 6vw;
+    }
+
+    @media (max-width: 1024px) and (orientation:landscape){
         font-size: 3.5vw;        
     }
 
-    @media (max-width: 768px) {
-        font-size: 5vw;     
-    }/* landscape potrait*/
-
-    @media (max-width: 420px) {
-        font-size: 7vw;
-        margin: 10% auto;   
+    @media (max-width: 768px) and (orientation:landscape){
+        font-size: 4vw;     
     }
+
+     @media (max-width: 1000px) and (max-height: 1000px) and (orientation: portrait){
+        font-size: 5vw;
+    }  
+
+    @media (max-height: 414px) and (orientation: landscape) {
+        margin: 0 auto;
+        font-size: 3.5vw;
+    } 
+    
+    @media (max-width: 768px) and (max-height: 1024px) and (orientation: portrait){
+        font-size: 5vw;
+    }  
 }
 
 .submit {
@@ -170,10 +211,13 @@ h2 {
         padding-top: 5%;     
     }
 
-    @media (max-width: 420px) {
+    @media (max-height: 1024px) and (orientation:portrait) {
         margin-bottom: 40%;
-    } /* to push try again button off the screen */
+    }
 
+    @media (max-height: 736px) and (orientation:portrait) {
+        margin-bottom: 50%;
+    }
 }
 
 form {
@@ -193,6 +237,14 @@ form {
     @media (max-width: 420px) {
         margin-top: 15%;
         margin-bottom: 20%;
+    }
+
+    @media (max-height: 960px) and (orientation:portrait) {
+        margin-top: 5%;
+    }
+
+    @media (max-height: 414px) and (orientation:landscape) {
+        margin-top: 5%;
     }
 
     fieldset {
@@ -224,7 +276,7 @@ form {
         width: 150%;
         height: 150%;
     }
-
+    input:focus + label,
     label:hover,
     input[type=submit]{
     background: $gradient;
