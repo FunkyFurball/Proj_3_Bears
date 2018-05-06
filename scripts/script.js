@@ -1,30 +1,31 @@
 const bears = [
   {
-    name: "Paddington",
+    name: "Paddington Bear",
     idealSnack: "sweet",
-    importantItem: "snack",
+    importantItem: "knife",
     activeTime: "day",
-    image: "assets/fishy_bear.jpg"
+    image: "assets/paddington_bear.jpg"
   },
 
   {
-    name: "Pooh Bear",
-    idealSnack: "sweet",
+    name: "Sleepy Bear",
+    idealSnack: "savoury",
     importantItem: "snack",
-    activeTime: "day",
-    image: "assets/fishy_bear.jpg"
+    activeTime: "night",
+    image: "assets/sleepy_bear.jpg"
   },
 
+
   {
-    name: "Bear Gryllis",
+    name: "Bear Grylls",
     idealSnack: "savoury",
     importantItem: "knife",
     activeTime: "day",
-    image: "assets/fishy_bear.jpg"
+    image: "assets/grylls_bear.jpg"
   },
 
   {
-    name: "Dwight",
+    name: "Hungry Bear",
     idealSnack: "sweet",
     importantItem: "knife",
     activeTime: "night",
@@ -32,11 +33,11 @@ const bears = [
   },
 
   {
-    name: "Nice Bear",
+    name: "Grumpy Bear",
     idealSnack: "savoury",
-    importantItem: "snack",
-    activeTime: "day",
-    image: "assets/fishy_bear.jpg"
+    importantItem: "knife",
+    activeTime: "night",
+    image: "assets/grumpy_bear.jpg"
   },
 
   {
@@ -44,16 +45,32 @@ const bears = [
     idealSnack: "sweet",
     importantItem: "snack",
     activeTime: "night",
-    image: "assets/fishy_bear.jpg"
+    image: "assets/teddy_bear.jpg"
   },
 
   {
-    name: "Hungry Bear",
+    name: "Gummy Bear",
     idealSnack: "sweet",
-    importantItem: "knife ",
+    importantItem: "knife",
+    activeTime: "night",
+    image: "assets/gummy_bear.jpg"
+  },
+
+  {
+    name: "Pooh Bear",
+    idealSnack: "sweet",
+    importantItem: "snack",
     activeTime: "day",
-    image: "assets/fishy_bear.jpg"
-  }
+    image: "assets/pooh_bear.jpg"
+  },
+
+  {
+    name: "Lazyyy Bear",
+    idealSnack: "savoury",
+    importantItem: "snack",
+    activeTime: "day",
+    image: "assets/tired_bear.jpg"
+  },
 ];
 
 const filter = [];
@@ -79,7 +96,6 @@ $(function(){
         
         //hide questions when submit button is clicked
         $('.questions').hide();
-
 
         //save user selection for each question into a variable
         const userIdealSnack = $("input[name=idealSnack]:checked").val();
@@ -111,20 +127,21 @@ $(function(){
           let storedChoice = secondFilter[i];
           if (userBear.activeTime === storedChoice.activeTime) {
             lastFilter.push(storedChoice);
-          }
+          } 
         }
-        console.log(lastFilter);
-          
+
         //get random match
         //make a function to generate a random number from the lastFilter array.
-
-        const getRandomItemFromArray = function (array) {
+          const getRandomItemFromArray = function (array) {
           const randomItem = Math.floor(Math.random() * array.length);
           return array[randomItem];
         }
           
         const finalResult = getRandomItemFromArray (lastFilter);
-        $(".result").html(`<h1>You are... ${finalResult.name}</h1><img src="${finalResult.image}" id="result">`);
+        $(".result").html(`<h1>You are...<span class="accent">${finalResult.name}</span></h1><img src="${finalResult.image}" id="result">`);
+
+
+      
       
         //smooth scroll will not work for form submission because when submit button is clicked, smooth scroll starts but problem is content is only generated after the click.
         //so, we use the following code to target body in html, animate it over 1000ms, and tell it to go to #result. Offset tells it to move from top of page.

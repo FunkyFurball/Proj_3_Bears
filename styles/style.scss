@@ -5,65 +5,154 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 $inputBgColor: #e7decd;
-$buttonBorder: #584442;
 $bgBrown:#2B2118;
-$bgGradient:linear-gradient(to bottom, $bgBrown, lighten($bgBrown,50%), $bgBrown);
 $gradient: linear-gradient(gold,brown);
-
+$accent: gold;
 
 html{
     font-size: 62.5%;
-    background: $bgGradient;
+    background: url("../assets/tree_bark.png"); 
 }
 
 body{
     font-family: 'Skranji', cursive;
-    font-size: 3rem;
+    font-size: 1.5vw;
+    
+    @media (max-width: 640px) {
+        font-size: 2.5vw;
+    }
+    @media (max-height: 414px) {
+        font-size: 2.5vw;
+    }
 }
 
-img{
+.result img {
     max-width: 100%;
+    border: 10px groove lighten(gold, 10%);
+    box-shadow: 5px 5px 5px $bgBrown;
 }
 
 p {
-    font-size: 4rem;
+    font-size: 2vw;
+    @media (max-width: 640px) {
+        font-size: 4vw;
+    }
+    @media (max-height: 414px) {
+        font-size: 4vw;
+    }
+
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+        color: goldenrod;
+    }   
+}
+
+.accent {
+    color: $accent;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 70%;
 }
 
 .header {
     height: 100vh;
     position: relative;
-    display:flex;
-    justify-content: center;
-    padding-top: 15%;
+    padding-top: 10%;
 }
 
 .logo {
-    width: 50%;
-    fill: #fbfaf8;
+    width: 40%;
+    fill: $bgBrown;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
-    transform:translateX(-50%);
-    transition: all 0.8s ease-in-out;
+    // transform:translateX(-50%);
+    // transition: all 0.8s ease-in-out;
+
+    @media (max-width: 1280px){
+        left: 50%;
+    }
+
+    @media (max-width: 1024px){
+        top: 60%;
+    }
+    
+    @media (max-width: 960px) {
+        top: 70%; 
+    }
+
+    @media (max-width: 800px) {
+        width: 70%;  
+        left: 50%; 
+        top: 30%; 
+    }
+
+    @media (max-width: 420px){
+        width: 70%;
+        top: 40%;
+    }
+
+    @media (max-height: 414px) {
+        width: 30%;
+        left: 95%;
+        top: 32%;
+    }
 }
 
-.logo:hover {
+.logo:hover, .logo:focus {
     fill: url(#myGradient); 
     stroke:$bgBrown;
-    transform:translateX(-50%) scale(1.2);
+    // transform:translateX(-50%) scale(1.1);
 }
 
-h1 {
-    margin:0;
+h1, h2 {
+    margin:3% auto;
     padding:0;
     text-align:center;
-    color: #fbfaf8;
-    font-size: 8rem;
+    color: $bgBrown;
+    text-shadow: 2px 2px 1px $bgBrown;
+    font-size: 7vw; 
+    @media (max-height: 414px) {
+    text-align: left;
+    }
 }
 
-.questions, .submit {
-    margin-top: 2% auto;
-    text-align: center;
+
+h1.responsive {
+    @media (max-width: 1024px) {
+        font-size: 9vw;        
+    }
+
+    @media (max-width: 768px) {
+        font-size: 8vw;
+    } /* landscape iphone6 */
+
+    @media (max-width: 420px) {
+        font-size: 12vw;   
+    }
+}
+
+h2 {
+    font-size:2.5vw;
+    @media (max-width: 1024px) {
+        font-size: 3.5vw;        
+    }
+
+    @media (max-width: 768px) {
+        font-size: 5vw;     
+    }/* landscape potrait*/
+
+    @media (max-width: 420px) {
+        font-size: 7vw;
+        margin: 10% auto;   
+    }
 }
 
 .submit {
@@ -72,20 +161,44 @@ h1 {
     padding: 5%;
 }
 
-.questions, .result_container {
-    padding-top: 5%;
+.questions {
+    padding-top: 8%;
+    @media (max-width: 1024px) {
+        padding-top: 3%;        
+    }
+    @media (max-width: 768px) {
+        padding-top: 5%;     
+    }
+
+    @media (max-width: 420px) {
+        margin-bottom: 40%;
+    } /* to push try again button off the screen */
+
 }
 
 .result_container {
-    height: 100vh;
+        height: 100vw;
 }
 
 form {
     margin:10% auto;
+    padding: 10% 0;
     border: 1px solid $bgBrown;
-    background: lighten($bgBrown, 80%);
-    border-radius: 5%;
-        
+    box-shadow: 5px 5px 5px $bgBrown;
+    border-radius: 2%;
+    background: lighten( gold, 70%);
+
+    
+    @media (max-width: 732px) {
+        margin-top: 30%;
+        margin-bottom: 70%;
+    }
+    
+    @media (max-width: 420px) {
+        margin-top: 15%;
+        margin-bottom: 20%;
+    }
+
     fieldset {
         text-align: center;
         border: none;
@@ -97,19 +210,23 @@ form {
 
     input:checked + label {
         background: $gradient;
-        box-shadow: none;
-        border:2px inset $buttonBorder;
-    }
+        border:1px solid $bgBrown;
+    }   
 
     label, 
     input[type=submit] {
         display: inline-block;
-        background:$inputBgColor;
-        width: 320px;
-        height: 80px;
+        background: $inputBgColor;
+        border:1px solid $bgBrown;
+        box-shadow: 5px 5px 5px $bgBrown;
+        width: 25%; 
         margin: 1%;
-        padding: 1%;
-        border:2px outset $buttonBorder;
+        padding: 2%;
+    }
+
+    input[type=submit] {
+        width: 150%;
+        height: 150%;
     }
 
     label:hover,
@@ -118,7 +235,31 @@ form {
     }    
 }
 
-.wrapper {
-    margin: 0 auto;
-    max-width: 1000px;
+.result_container {
+    width: 100%;
+    .wrapper {
+        text-align: center;
+        .result, .share {
+            display: inline-block;
+        }
+        .try-again {
+            padding: 5%;
+            a{
+                display:inline-block;
+                border: 1px solid $bgBrown;
+                background: $inputBgColor;
+                color: inherit;
+                padding: 4%;
+                text-decoration: none;
+                box-shadow: 5px 5px 5px $bgBrown;
+            }
+            a:hover, a:focus {
+                background: $gradient;
+            }
+        }
+    }
 }
+
+footer{
+    text-align: center;
+}   

@@ -7,17 +7,16 @@
         <title>Who Would You Be-ar?</title>
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/animate.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Skranji" rel="stylesheet">
         
     </head>
     <body>
         <header>
             <div class="wrapper header">
-                <h1>Who would you be?</h1>
-                <!-- <h1>Who would you</h1><h1 class="bearText"><span class="backdrop">be(ar)</span>?</h1> -->
+                <h1 class="responsive">Who would <span class="accent">you</span> be?</h1>                
+                <h2 class="animated bounce">Click on the <span class="accent">bear</span> to find out!</h2>
                 <a href="#questions">
-                    <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                    <svg class="logo animated lightSpeedIn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                         <defs>
                             <linearGradient id="myGradient">
                                 <stop offset="5%" stop-color="gold"/>
@@ -44,7 +43,10 @@
         <main>
             <section class="questions" id="questions">
                 <div class="wrapper">
-                    <h1>Who would you be?</h1>
+                    <h1>Who would
+                        <span class="accent">you</span> 
+                        be?
+                    </h1>
                     <form action="">
                         <fieldset class="idealSnack">
                             <p>Your ideal munchies are...</p>
@@ -64,7 +66,7 @@
                         <fieldset class="activeTime">
                             <p>7am and a glorious sunny day, do you feel...</p>
                             <input type="radio" id="night" value="night" name="activeTime">
-                            <label for="night">Cursed to be awake</label>
+                            <label for="night">Grumpy</label>
             
                             <input type="radio" id="day" value="day" name="activeTime">
                             <label for="day"> Fired up!</label>
@@ -75,7 +77,7 @@
                     </form>
                 </div>
 
-            <audio src="assets/lion-purr2.wav" id="sound" class="sound"></audio>
+            <audio src="assets/lion-purr2.wav" id="sound"></audio>
             </section>
 
             <section class="result_container">
@@ -83,10 +85,22 @@
                     <div class="result">
                     <!-- results go here -->
                     </div>
-                </div>
-            </section>
+                    <div class="share">
+                        <div class="try-again"><a href="index.html">Try again!</a></div><br>
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="I just found out who I would be(ar)! Try it at liyinglim.com/bear-quiz and let me know what kind of bear are you!" data-via="LiYingCodes" data-hashtags="cohort18" data-show-count="false" data-size="large">Tweet</a> 
+                        <a href="https://twitter.com/LiYingCodes" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @LiYingCodes</a>
+                    </div>
+                </section>
         </main>
 
+        <footer>
+            <div class="wrapper">
+                &copy; 2018 Li Ying Lim ||
+                <a href="bear-source.html">Image Sources</a>
+            </div>
+        </footer>
+            
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
         <script src="scripts/script.js"></script>
