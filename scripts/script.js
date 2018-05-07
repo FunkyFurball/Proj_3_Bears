@@ -80,9 +80,8 @@ const sound = document.getElementById('sound');
 
 $(function(){
   //TO BEGIN THE QUIZ
-  //Click bear logo, smooth scroll to question section
-  
-  // $('a').smoothScroll(1000); 
+  // $('a').smoothScroll(1000); // smoothscroll commented out but left in case decide to use this option next time.
+  //Click bear logo, bear and header disappears, move to question sections
   $('.logo').on('click',function(){
     $('.header').hide();
   });
@@ -140,33 +139,12 @@ $(function(){
         const finalResult = getRandomItemFromArray (lastFilter);
         $(".result").html(`<h1>You are...<span class="accent">${finalResult.name}</span></h1><img src="${finalResult.image}" id="result">`);
 
-
-      
-      
         //smooth scroll will not work for form submission because when submit button is clicked, smooth scroll starts but problem is content is only generated after the click.
         //so, we use the following code to target body in html, animate it over 1000ms, and tell it to go to #result. Offset tells it to move from top of page.
+        //smooth scroll not used in this version but left here in case prefer to use next time.
         //  $('html, body').animate({
         //   scrollTop: $('#result').offset().top
         // }, 1000) 
       });
-
-        
 }); //end of document ready
       
-
-
-
-
-
-
-
-
-
-
-
-
-      
-      // adding filter method
-      // const secondFilter = filter.filter( (bear) => {
-      //     return (userBear.importantItem === bear.importantItem)
-      // });
