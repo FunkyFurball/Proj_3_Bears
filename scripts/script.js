@@ -81,7 +81,16 @@ const sound = document.getElementById('sound');
 $(function(){
   //For nav bar drop down
   $('.about').on('click', function(){
+    $('.dropdown').slideToggle('fast', function(){
+      $('.close').toggle();
+      $('.about').toggle();
+    });
+  })
+
+  $('.close').on('click', function () {
     $('.dropdown').slideToggle('fast');
+    $('.close').toggle();
+    $('.about').toggle();
   })
 
   //For sources page
@@ -92,6 +101,7 @@ $(function(){
       $('.sources-link-back').toggle();
     }); 
   })
+  
 
   //Hide form and results page
   $('.hidden').hide();
