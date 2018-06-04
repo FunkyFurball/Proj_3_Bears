@@ -116,9 +116,6 @@ $(function(){
     $('.form').on('submit', function(e) {
         //prevent page from refreshing
         e.preventDefault();
-
-        //play sound when submit button is clicked
-        sound.play();
         
         //hide questions when submit button is clicked
         $('.form').hide();
@@ -166,13 +163,25 @@ $(function(){
           }
           
         let finalResult = getRandomItemFromArray (lastFilter);
-        
+
         //if loop below ensures that all other combinations of answers will yield a bear. 
         if (lastFilter.length === 0) {
           finalResult = bears[0];
-        } 
+        }
 
-      $(".result").append(`
+      // alert if form not completely filled out
+      if (($("input[name=idealSnack]:checked").val() == null || $("input[name=importantItem]:checked").val() == null || $("input[name=activeTime]:checked").val() == null)) {
+        alert(`Please answer the questions!`);
+        $('.form').show();
+        $('.result').hide();
+      } else {
+        //play sound when submit button is clicked
+        sound.play();
+        $('.result').show();
+      }
+
+
+      $(".result").html(`
           <h1 class="result-header">You are... <span class="accent">${finalResult.name}</span> </h1><br><img src="${finalResult.image}" id="result"><br><a href="index.html" class="button">Try again!</a>`);
 
         //smooth scroll will not work for form submission because when submit button is clicked, smooth scroll starts but problem is content is only generated after the click.
