@@ -334,6 +334,8 @@ nav {
   top: 0;
   right: 0;
   padding: 10px; }
+  .close:hover {
+    color: #e6e5e5; }
 
 .sources {
   display: none;
