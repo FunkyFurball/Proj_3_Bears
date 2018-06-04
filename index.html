@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Who Would You Be-ar?</title>
+        <title>Bear Quiz</title>
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/animate.css">
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Skranji" rel="stylesheet">
@@ -12,104 +12,123 @@
     </head>
     <body>
         <header>
-            <div class="wrapper header">
-                <h1 class="responsive">Who would <span class="accent">you</span> be?</h1>                
-                <h2 class="animated bounce">Click on the <span class="accent"><a href="#questions">bear</a></span> to find out!</h2>
-                <h3>
-                    Keyboard users:
-                    <span class="accent">tab</span> through answers and select using
-                    <span class="accent">spacebar</span> <em>or</em> left and right
-                    <span class="accent">arrow</span> keys! <span class="accent">Tab + enter</span> to submit!
-                </h3>
-                <a href="#questions">
-                    <svg class="logo animated lightSpeedIn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
-                        <defs>
-                            <linearGradient id="myGradient">
-                                <stop offset="5%" stop-color="gold"/>
-                                <stop offset="95%" stop-color="brown"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <path d="M93.5,61c0,0-1.6,6.4-2.1,7.6c-0.4,1.2-2.9,5.4-2.9,5.4s1.4,3.3,1.6,3.9c0.2,0.6-2.9,1.9-3.3,2.9s0.6,1.9,4.5,1.6   c3.9-0.2,5.6,0.2,6.6-3.9C99.1,74.4,100.8,69.6,93.5,61z"
-                            />
-                            <path d="M36,56.9l-2.5-7.6c-0.4-1.1-1.4-1.9-2.6-1.9h-5.4c0,0,1.2,4.9,2.5,9.3c1.2,4.3,2.9,6.6,2.9,6.6L36,56.9z" />
-                            <path d="M38.9,77.7c-0.8,1.4-0.8,2.5-2.9,3.9c-2.1,1.4,1.6,0.7,7,0.9c0,0,2.5-0.8,2.5-2.9c0-2.1-1.9-7.1-1.9-7.1   S39.7,76.2,38.9,77.7z"
-                            />
-                            <path d="M15.3,21.8c0,0-1.5-2.5-3.5-2c-2,0.5-0.7,4.8-0.7,4.8S12.3,22.4,15.3,21.8z" />
-                            <path d="M92.6,41.8c-3.4-9.3-9.5-23.7-38.2-21.6c0,0-4.7-0.6-7.6-3.1s-8.2-2.7-14.6,2.3c0,0-2.7,1.8-11.9,2.9c0,0-5.4,0.2-7.3,2.4   s-5.2,4.7-6.4,7.2c-0.3,0.7,0,2.6,0,2.6l-5.1,4c-0.5,0.4-0.6,1.2-0.3,1.7c0.9,1.3,2.5,4.9,3.9,5.2c1.3,0.3,5.1,0.7,9.1,0.2   c3-0.3,12.2-0.3,17.9-0.2c1.7,0,3.2,1.1,3.7,2.8l2.5,9c0,0-3.3,5.6-7,9.3c-3.7,3.7-3.5,8.7-2.3,11.1c1.2,2.5,5.8,5.2,8.2,0   c2.5-5.2,9.5-7.8,11.6-11.5c2-3.7,6.2-8.9,5.3-15.4l0.1-2.8c0,0,2.2,4.2,1.1,8.2c-1,4-1,4-1,4s12.4,3.7,15,2.5   c0,0,0.4-6.6,6.8-12.8c0,0-6.2,10.3-5.4,15.7c0.8,5.4,0.2,8-0.6,11.1c-0.8,3.1-2.2,4-2.2,4s-4,0.6-3.8,2.8c0.2,2.3,14.5,1,14.5,1   s2.2-0.4,2.2-1.9s6.4-6,9.9-18C94.4,52.3,95.9,51.1,92.6,41.8z M11.8,34.4c-0.7,0-1.3-0.6-1.3-1.3s0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3   S12.5,34.4,11.8,34.4z M23.2,31.1c0,0-0.8-3.3-3.6-4c0,0,0.8-3.1,2.5-2.5S23.5,29.4,23.2,31.1z"
-                            />
-                        </g>
-                        <!-- <text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by parkjisun</text>
-                        <text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text> -->
-                    </svg>
-                </a>
-               
-            </div>
-        </header>
-        
-        <main>
-            <section class="questions" id="questions">
+            <nav>
                 <div class="wrapper">
-                    <h1>Who would
-                        <span class="accent">you</span> 
-                        be?
-                    </h1>
-                    <form action="">
-                        <fieldset class="idealSnack">
-                            <p>Your ideal munchies are...</p>
-                            <input type="radio" id="sweet" value="sweet" name="idealSnack">
-                            <label for="sweet">Sweet</label>
-                            <input type="radio" id="savoury" value="savoury" name="idealSnack">
-                            <label for="savoury">Savoury</label>
-                        </fieldset>
-                        <fieldset class="importantItem">
-                            <p>Stranded alone, what is more important?</p>
-                            <input type="radio" id="snack" value="snack" name="importantItem">
-                            <label for="snack">Fav snack</label>
-                            
-                            <input type="radio" id="knife" value="knife" name="importantItem">
-                            <label for="knife">Knife</label>
-                        </fieldset>
-                        <fieldset class="activeTime">
-                            <p>7am and a glorious sunny day, do you feel...</p>
-                            <input type="radio" id="night" value="night" name="activeTime">
-                            <label for="night">Grumpy</label>
-            
-                            <input type="radio" id="day" value="day" name="activeTime">
-                            <label for="day"> Fired up!</label>
-                        </fieldset>
-                        <div class="submit">
-                            <a href="#result"><input type="submit" value="I'm __ Bear"></a>
-                        </div>
-                    </form>
+                    <a href="index.html" class="logo">Bear Quiz</a>
+                    <a href="#" class="about">About</a>
                 </div>
+            </nav>
+            <div class="dropdown">
+                <p>Welcome to my first <span class="accent">Javascript</span> project! </p> 
+                <p>I had so much fun building this using <span class="accent">jQuery</span>, <span class="accent">HTML</span> and <span class="accent">CSS</span>! </p>
+                <p>I hope you enjoy my quiz! </p>
+            </div>
+        </header>   
+        
+        <main class="main wrapper">
+            <div class="cover-page">
+                <div>
+                    <h1>Which bear would<span class="accent"> you</span> be?</h1>
+                </div>
+                <p>Take this quiz to find out!</p>
+                <a href="#" class="start-button"><img src="assets/bear-icon.png" class="animated wobble infinite"></a>
+                <a href="#" class="start-button button">Start!</a>
+            </div>
+            <form action="" class="form hidden">
+                <div class="idealSnack">
+                    <p>1. Your ideal munchies are...</p>
+                    <input type="radio" id="sweet" value="sweet" name="idealSnack">
+                    <label for="sweet">Sweet</label>
+                    <input type="radio" id="savoury" value="savoury" name="idealSnack">
+                    <label for="savoury">Savoury</label>
+                </div>
+                <div class="importantItem">
+                    <p>2. Stranded alone, what is more important?</p>
+                    <input type="radio" id="snack" value="snack" name="importantItem">
+                    <label for="snack">Fav snack</label>
+            
+                    <input type="radio" id="knife" value="knife" name="importantItem">
+                    <label for="knife">Knife</label>
+                </div>
+                <div class="activeTime">
+                    <p>3. 7am and a glorious sunny day, do you feel...</p>
+                    <input type="radio" id="night" value="night" name="activeTime">
+                    <label for="night">Grumpy</label>
+            
+                    <input type="radio" id="day" value="day" name="activeTime">
+                    <label for="day"> Fired up!</label>
+                </div>
+                    <input type="submit" value="Tell me!" class="button">
+                    <audio src="assets/lion-purr2.wav" id="sound"></audio>
 
-            <audio src="assets/lion-purr2.wav" id="sound"></audio>
-            </section>
-
-            <section class="result_container">
-                <div class="wrapper">
-                    <div class="result">
-                    <!-- results go here -->
-                    </div>
-                    <div class="share">
-                        <div class="try-again"><a href="index.html">Try again!</a></div><br>
-                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="I just found out who I would be(ar)! Try it at liyinglim.com/bear-quiz and let me know what kind of bear are you!" data-via="LiYingCodes" data-hashtags="cohort18" data-show-count="false" data-size="large">Tweet</a> 
-                        <a href="https://twitter.com/LiYingCodes" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @LiYingCodes</a>
-                    </div>
-                </section>
+            </form>
+            <div class="result hidden">
+                <!-- results go here -->
+            </div>  
         </main>
+        <section>
+            <div class="sources">
+                <p>All images of bears were taken from these websites respectively:</p>
+                <ul>
+                    <li>
+                        <a href="http://www.biologicaldiversity.org/species/mammals/grizzly_bear/" target="_blank">Sleepy Bear</a>
+                    </li>
+                    <li>
+                        <a href="https://www.theglobeandmail.com/news/national/grizzly-sightings-in-polar-bear-territory-inspire-talk-of-ultimate-ursine-fight/article1210013/"
+                            target="_blank">Hungry Bear</a>
+                    </li>
+                    <li>
+                        <a href="https://www.amazon.com/Bears-Grumpy-Vynil-Sticker-Decal/dp/B00DSD5UUQ" target="_blank">Grumpy Bear</a>
+                    </li>
+                    <li>
+                        <a href="https://samsapothecary.com/product/cbd-gummy-bears/" target="_blank">Gummy Bear</a>
+                    </li>
+                    <li>
+                        <a href="https://starsunfolded.com/bear-grylls/" target="_blank">Bear Grylls</a>
+                    </li>
+                    <li>
+                        <a href="http://www.dailymail.co.uk/news/article-5425757/Youngsters-pose-grizzly-bear-forest-Moscow.html" target="_blank">Teddy Bear</a>
+                    </li>
+                    <li>
+                        <a href="https://d302e0npexowb4.cloudfront.net/wp-content/uploads/2017/10/13095719/paddington-bear-with-sandwiches-on-head-for-europa-park-1.jpg"
+                            target="_blank">Paddington Bear</a>
+                    </li>
+                    <li>
+                        <a href="https://static.boredpanda.com/blog/wp-content/uploads/2016/09/mother-bear-cubs-animal-parenting-48-57e3cb3b33c8d__880.jpg"
+                            target="_blank">Lazyyy Bear</a>
+                    </li>
+                    <li>
+                        <a href="https://vignette.wikia.nocookie.net/p__/images/0/05/220px-Winniethepooh.png/revision/latest?cb=20160321002219&path-prefix=protagonist"
+                            target="_blank">Pooh Bear</a>
+                    </li>
+                </ul>
+                <p>
+                    Background pattern from
+                    <a href="https://www.toptal.com/designers/subtlepatterns/?s=tree+bark" target="_blank">here</a>.
+                </p>
+                <p>Bear SVG created by Icons Producer from
+                    <a href="https://thenounproject.com/" target="_blank">Noun Project</a>.</p>
+            </div>
+        </section>
 
         <footer>
             <div class="wrapper">
-                &copy; 2018 Li Ying Lim ||
-                <a href="bear-source.html">Image Sources</a>
+                <div>
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="I just found out who I would be(ar)! Try it at liyinglim.com/bear-quiz and let me know what kind of bear are you!"
+                            data-via="LiYingCodes" data-hashtags="cohort18" data-show-count="false" data-size="large">Tweet</a>
+                    <a href="https://twitter.com/LiYingCodes" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @LiYingCodes</a>
+                </div>
+                <div>
+                        &copy; 2018 Li Ying Lim ||
+                        <a href="#" class="sources-link">Image Sources</a>
+                        <a href="index.html" class="sources-link-back">Return to Quiz</a>
+
+                </div>
             </div>
         </footer>
             
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
         <script src="scripts/script.js"></script>
     </body>
     </html>

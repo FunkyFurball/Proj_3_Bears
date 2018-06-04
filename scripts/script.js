@@ -79,14 +79,31 @@ const lastFilter = [];
 const sound = document.getElementById('sound');
 
 $(function(){
+  //For nav bar drop down
+  $('.about').on('click', function(){
+    $('.dropdown').slideToggle('fast');
+  })
+
+  //For sources page
+  $('.sources-link').on('click', function(){
+    $('.sources').slideToggle('fast',function(){
+      $('.main').toggle();
+      $('.sources-link').toggle();
+      $('.sources-link-back').toggle();
+    }); 
+  })
+
+  //Hide form and results page
+  $('.hidden').hide();
+
   //TO BEGIN THE QUIZ
-  // $('a').smoothScroll(1000); // smoothscroll commented out but left in case decide to use this option next time.
-  //Click bear logo, bear and header disappears, move to question sections
-  $('.logo').on('click',function(){
-    $('.header').hide();
+  $('.start-button').on('click',function(){
+    $('.cover-page').hide();
+    $('.hidden').show();
   });
+  
   // FOR THE FORM, QUESTIONS AND SUBMIT EVENT
-    $('form').on('submit', function(e) {
+    $('.form').on('submit', function(e) {
         //prevent page from refreshing
         e.preventDefault();
 
@@ -94,7 +111,9 @@ $(function(){
         sound.play();
         
         //hide questions when submit button is clicked
-        $('.questions').hide();
+        $('.form').hide();
+        $('header h1').hide();
+        $('.result-header').show();
 
         //save user selection for each question into a variable
         const userIdealSnack = $("input[name=idealSnack]:checked").val();
@@ -132,12 +151,19 @@ $(function(){
         //get random match
         //make a function to generate a random number from the lastFilter array.
           const getRandomItemFromArray = function (array) {
-          const randomItem = Math.floor(Math.random() * array.length);
-          return array[randomItem];
-        }
+            const randomItem = Math.floor(Math.random() * array.length);
+            return array[randomItem];
+          }
           
-        const finalResult = getRandomItemFromArray (lastFilter);
-        $(".result").html(`<h1>You are...<span class="accent">${finalResult.name}</span></h1><img src="${finalResult.image}" id="result">`);
+        let finalResult = getRandomItemFromArray (lastFilter);
+        
+        //if loop below ensures that all other combinations of answers will yield a bear. 
+        if (lastFilter.length === 0) {
+          finalResult = bears[0];
+        } 
+
+      $(".result").append(`
+          <h1 class="result-header">You are... <span class="accent">${finalResult.name}</span> </h1><br><img src="${finalResult.image}" id="result"><br><a href="index.html" class="button">Try again!</a>`);
 
         //smooth scroll will not work for form submission because when submit button is clicked, smooth scroll starts but problem is content is only generated after the click.
         //so, we use the following code to target body in html, animate it over 1000ms, and tell it to go to #result. Offset tells it to move from top of page.

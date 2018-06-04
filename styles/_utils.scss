@@ -1,0 +1,4 @@
+@mixin font-size($size-value) {
+    font-size: $size-value * 1px; /* fall back px value */
+    font-size: ($size-value/10) * 1rem;
+}
